@@ -33,7 +33,7 @@ public class Gamemanager : MonoBehaviour
     public void Kougeki()
     {
         _e_hp -= 50;
-        _t = "攻撃して相手に50ダメージ";
+        _t = "攻撃して相手に50ダメージ\n";
         EnemyTurn();
     }
     public void Skill()
@@ -84,6 +84,7 @@ public class Gamemanager : MonoBehaviour
         }
         Debug.Log("敵のHP="+_e_hp+",自分のHP="+_p_hp);
         _t += "敵のHP=" + _e_hp + ",自分のHP=" + _p_hp;
+        _text.text = _t;
         Debug.Log(_t);
     }
 }
