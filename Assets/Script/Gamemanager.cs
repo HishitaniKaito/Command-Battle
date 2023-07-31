@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Gamemanager : MonoBehaviour
     public int _p_limsp = 100;
     public int _skill = 0;
     int _item = 5;
+    [SerializeField] Text _text;
+    string _t;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class Gamemanager : MonoBehaviour
     public void Kougeki()
     {
         _e_hp -= 50;
+        _t = "UŒ‚‚µ‚Ä‘Šè‚É50ƒ_ƒ[ƒW";
         EnemyTurn();
     }
     public void Skill()
@@ -44,7 +48,6 @@ public class Gamemanager : MonoBehaviour
             Debug.Log("spØ‚ê‚Ä‚é‚©‚çg‚¦‚È‚¢");
         }
         EnemyTurn();
-        //aaaaa
     }
     public void Item()
     {
@@ -80,5 +83,7 @@ public class Gamemanager : MonoBehaviour
             _p_hp -= 50;
         }
         Debug.Log("“G‚ÌHP="+_e_hp+",©•ª‚ÌHP="+_p_hp);
+        _t += "“G‚ÌHP=" + _e_hp + ",©•ª‚ÌHP=" + _p_hp;
+        Debug.Log(_t);
     }
 }
